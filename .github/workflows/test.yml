@@ -1,0 +1,22 @@
+name: Addon checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - run: sudo apt-get update && sudo apt-get install -y lua5.1
+      - name: Forever behavior
+        run: lua5.1 test/sptouchbars.lua SPTouchBars/SPTouchBars.lua
+      - name: Retail behavior
+        run: lua5.1 test/sptouchbars.lua SPTouchBars/SPTouchBars.lua retail
+      - name: Package installable addon
+        run: python3 scripts/package.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: Touchbars-addon
+          path: dist/Touchbars-*.zip
