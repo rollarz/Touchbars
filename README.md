@@ -16,6 +16,11 @@ when upgrading from the old version, but spells and utility must be assigned aga
 
 ## Install
 
+To use the touch bars with another Slashplayed fork, Wolkara, or a regular WoW installation,
+download the standalone [Touchbars addon from CurseForge](https://www.curseforge.com/wow/addons/touchbars).
+For GeForce NOW, availability depends on [NVIDIA's supported addon catalog](https://nvidia.custhelp.com/app/answers/detail/a_id/5567);
+a CurseForge listing alone does not make an addon available there.
+
 Slashplayed bundles this addon and installs it automatically before launching Forever or Retail, including
 games installed directly on the device. A new Slashplayed build updates the bundled addon files on
 the next launch without overwriting your saved layout. Open **WoW Settings > AddOns > SPTouchBars > Edit layout**,
